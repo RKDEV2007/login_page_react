@@ -1,4 +1,12 @@
-
+:root {
+  --bg: #0a0a12;
+  --card: #12121c;
+  --text: #ffffff;
+  --muted: #8a8aa0;
+  --border: #2a2a3a;
+  --neon: #00eaff;
+  --error: #ff4d6d;
+}
 
 .app {
   min-height: 100vh;
@@ -6,32 +14,35 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background-color: #f5f5f5;
+  background-color: var(--bg);
 }
 
 .login-container,
 .result-card {
   width: 100%;
-  max-width: 420px;
-  background-color: #ffffff;
-  border: 1px solid #dcdcdc;
+  max-width: 380px;
+  background-color: var(--card);
+  border: 1px solid var(--neon);
   border-radius: 12px;
-  padding: 32px 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.25);
 }
 
 .title,
 .result-title {
-  font-size: 32px;
-  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 600;
   text-align: center;
-  color: #111111;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 10px rgba(0, 234, 255, 0.6);
 }
 
 .subtitle,
 .result-text {
-  font-size: 16px;
-  color: #555555;
+  font-size: 14px;
+  color: var(--muted);
   text-align: center;
   margin-bottom: 24px;
 }
@@ -39,73 +50,84 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #222222;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.04em;
 }
 
 .input {
   width: 100%;
-  padding: 12px 14px;
-  border: 1px solid #cfcfcf;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  font-size: 15px;
-  color: #111111;
-  background-color: #ffffff;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 14px;
+  color: var(--text);
+  background-color: transparent;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input::placeholder {
+  color: #555566;
 }
 
 .input:focus {
   outline: none;
-  border-color: #111111;
-  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+  border-color: var(--neon);
+  box-shadow: 0 0 0 3px rgba(0, 234, 255, 0.2);
 }
 
 .button {
   width: 100%;
-  padding: 12px 14px;
-  border: none;
+  padding: 10px 14px;
+  margin-top: 4px;
+  border: 1px solid var(--neon);
   border-radius: 8px;
-  background-color: #111111;
-  color: #ffffff;
-  font-size: 15px;
+  background-color: transparent;
+  color: var(--neon);
+  font-size: 14px;
   font-weight: 600;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-shadow: 0 0 8px rgba(0, 234, 255, 0.6);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
 }
 
 .button:hover {
-  opacity: 0.9;
+  background-color: rgba(0, 234, 255, 0.1);
+  box-shadow: 0 0 14px rgba(0, 234, 255, 0.5);
 }
 
 .button:active {
-  transform: scale(0.98);
+  transform: scale(0.99);
 }
 
 .error-text {
-  font-size: 14px;
-  color: #c62828;
-  margin-top: -6px;
+  font-size: 13px;
+  color: var(--error);
+  text-align: center;
+  margin: -4px 0 0;
+  text-shadow: 0 0 8px rgba(255, 77, 109, 0.5);
 }
 
 @media (max-width: 480px) {
   .login-container,
   .result-card {
-    padding: 24px 18px;
+    padding: 24px 20px;
   }
 
   .title,
   .result-title {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
